@@ -1,0 +1,33 @@
+{
+  "$schema": "https://code.claude.com/schemas/plugin.json",
+  "name": "calmo",
+  "displayName": "calmo.cloud",
+  "version": "0.1.0",
+  "description": "Connects Claude Code to calmo.cloud, the hosting platform for Odoo, and adds skills for working with it, starting with moving an existing Odoo onto calmo.cloud.",
+  "author": {
+    "name": "HAV Media",
+    "url": "https://calmo.cloud"
+  },
+  "homepage": "https://calmo.cloud/docs/api/mcp",
+  "repository": "https://github.com/havmedia/calmo-cloud-plugin",
+  "license": "MIT",
+  "keywords": ["odoo", "hosting", "migration", "mcp"],
+  "userConfig": {
+    "api_token": {
+      "type": "string",
+      "title": "calmo.cloud API token",
+      "description": "An API token of your team, created under Developer → API Tokens in the calmo.cloud panel. Use a token for this assistant only, so you can revoke it on its own.",
+      "required": true,
+      "sensitive": true
+    }
+  },
+  "mcpServers": {
+    "calmo": {
+      "type": "http",
+      "url": "https://calmo.cloud/api/mcp",
+      "headers": {
+        "Authorization": "Bearer ${user_config.api_token}"
+      }
+    }
+  }
+}
