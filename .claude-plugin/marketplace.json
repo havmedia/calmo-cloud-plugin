@@ -1,0 +1,16 @@
+{
+  "$schema": "https://code.claude.com/schemas/marketplace.json",
+  "name": "calmo-cloud",
+  "description": "calmo.cloud for Claude Code: the MCP server and skills for running Odoo on calmo.cloud.",
+  "owner": {
+    "name": "HAV Media",
+    "url": "https://calmo.cloud"
+  },
+  "plugins": [
+    {
+      "name": "calmo",
+      "source": "./",
+      "description": "The calmo.cloud MCP server plus skills for running Odoo on calmo.cloud, starting with moving an existing Odoo onto it."
+    }
+  ]
+}
